@@ -46,18 +46,18 @@ public class ReviewService {
         return this.reviewRepository.findAll();
     }
 
-    public Review updateRoom(Review book) {
-        Review updatedBook = null;
-        if(book != null){
-            updatedBook = this.reviewRepository.save(book);
+    public Review updateReview(Review review) {
+        Review updatedReview = null;
+        if(review != null){
+            updatedReview = this.reviewRepository.save(review);
         }else {
             LOG.error(ERROR_UPDATE);
         }
-        return  updatedBook;
+        return  updatedReview;
     }
 
 
-    public void delete(String id){
+    public void deleteReview(String id){
         Review book = null;
         if(id != null){
             book = findReviewById(id);

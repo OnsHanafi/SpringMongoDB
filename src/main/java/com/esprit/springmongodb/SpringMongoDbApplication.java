@@ -19,30 +19,34 @@ public class SpringMongoDbApplication {
 		SpringApplication.run(SpringMongoDbApplication.class, args);
 	}
 
+	/**
 	@Bean
-	public CommandLineRunner runner(ReviewRepository reviewRepository){
+
+	public CommandLineRunner runner(BookRepository bookRepository){
 		return args -> {
-			Book book = new Book(
-					"Prisoner of Azkaban",
-					"J. K. Rowling"
-			);
+
 		 Review review1 = new Review(
 				 "wow",
-				 Rating.GOOD,
-				 book
+				 Rating.GOOD
 		 )	;
 			Review review2 = new Review(
 					"Beep",
-					Rating.EXCELLENT,
-					book
+					Rating.EXCELLENT
 					)	;
 
+			Book book = new Book(
+					"Prisoner of Azkaban",
+					"J. K. Rowling",
+					List.of(review1,review2)
+			);
 
+			bookRepository.insert(book);
 
-		 reviewRepository.insert(review1);
-		 reviewRepository.insert(review2);
+		// reviewRepository.insert(review1);
+		// reviewRepository.insert(review2);
 		};
 
 	}
+	 **/
 
 }

@@ -47,7 +47,7 @@ public class BookService {
         return this.bookRepository.findAll();
     }
 
-    public Book updateRoom(Book book) {
+    public Book updateBook(Book book) {
         Book updatedBook = null;
         if(book != null){
             updatedBook = this.bookRepository.save(book);
@@ -58,7 +58,7 @@ public class BookService {
     }
 
 
-    public void delete(String id){
+    public void deleteBook(String id){
         Book book = null;
         if(id != null){
             book = findBookById(id);
