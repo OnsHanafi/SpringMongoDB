@@ -17,5 +17,9 @@ public class Review {
     private Rating rating;
     private Book book;
 
-
+    public Review(String content, Rating rating,Book book) {
+        this.content = content;
+        this.rating = rating;
+        this.book = book;
+    }
 }
